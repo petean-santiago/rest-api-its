@@ -41,7 +41,7 @@ class RouteServiceProvider extends ServiceProvider
                 $cognome = basename($file, '.php');
                 $cognome = str_replace("_","-",$cognome);
                 Route::middleware('api')
-                    ->prefix('api/its/'.$cognome)
+                    ->prefix('api/'.$cognome)
                     ->group($file);
             }
         });
