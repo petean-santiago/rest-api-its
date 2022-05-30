@@ -1,1 +1,3 @@
-$nome = "Soufian Jghalef";
+<?php
+    $nome = 'Soufian';
+?>
