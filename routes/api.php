@@ -19,5 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/salve', function(Request $request){
-    return response("Evviva");
+    return response($request->cookie('tknitssgamos', "NULLA"));
+});
+
+Route::get('/registra', function(Request $request){
+    return response("OK")->cookie('tknitssgamos', sha1('pappalalla'));
 });
