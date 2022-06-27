@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\ReadedBookController;
 use App\Http\Controllers\Api\V1\RegistraTokenController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/registra-token', [RegistraTokenController::class, 'registra'])->name('registra-token');
+
+Route::apiResource('/readed-books', ReadedBookController::class);
 
