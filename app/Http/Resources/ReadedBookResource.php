@@ -15,7 +15,10 @@ class ReadedBookResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->uuid
+            'id' => $this->uuid,
+            'isbn' => $this->isbn,
+            'title' => $this->title,
+            'author' => $this->author
         ];
     }
 }

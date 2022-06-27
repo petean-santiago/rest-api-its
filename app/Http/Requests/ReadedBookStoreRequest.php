@@ -24,7 +24,7 @@ class ReadedBookStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'isbn' => 'required|string|max:15',
+            'isbn' => 'required|string|max:15|unique:readed_books,isbn',
             'title' => 'required|string|max:255',
             'author' => 'required|string|max:255',
         ];
