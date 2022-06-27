@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/login', function () {
+    return Socialite::driver('google')->redirect();
+})->name('login');
+
+Route::get('/auth/callback', function () {
+    $user = Socialite::driver('google')->user();
+
+    dd($user);
+});
