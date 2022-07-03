@@ -33,7 +33,4 @@ Route::get('/login', function () {
     return Socialite::driver('google')->redirect();
 })->name('login');
 
-Route::get('/auth/callback', function () {
-
-
-});
+Route::get('/auth/callback', 'GoogleLoginCallbackController@index');
