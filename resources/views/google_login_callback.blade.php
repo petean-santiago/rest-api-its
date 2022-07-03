@@ -8,7 +8,18 @@
                     <div class="card-header">{{ __('Dashboard') }}</div>
 
                     <div class="card-body">
-                        @dd($user)
+                        <table>
+                            <tr>
+                                <th>Chiave</th>
+                                <th>Dato</th>
+                            </tr>
+                            @foreach($dato_utente as $k => $v)
+                                <tr>
+                                    <td>{{$k}}</td>
+                                    <td>{{$v}}</td>
+                                </tr>
+                            @endforeach
+                        </table>
                     </div>
                 </div>
             </div>

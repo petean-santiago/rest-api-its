@@ -11,7 +11,12 @@ class GoogleLoginCallbackController
     {
         $user = Socialite::driver('google')->user();
         return view('google_login_callback', [
-            'user' => $user
+            'dato_utente' => [
+                'Nome e Cognome' => $user->getName(),
+                'Id' => $user->getId(),
+                'Email' => $user->getEmail(),
+                'Token' => $user->token
+            ]
         ]);
     }
 }
